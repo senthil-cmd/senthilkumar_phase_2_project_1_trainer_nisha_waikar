@@ -27,17 +27,18 @@ public class Register extends HttpServlet {
 		String username = request.getParameter("uname");
 		String password = request.getParameter("password");
 		if(username.length()==0&&password.length()==0) {	
-		AdminDao d = new AdminDao();
-		d.updateadmin(username, password);
-		rd = request.getRequestDispatcher("index.html");
-		rd.include(request,response);
-		out.println("<h2>New username and password updated sucessfully<h2>");
-		}
-		else {
-			rd = request.getRequestDispatcher("update_admin.html");
-			rd.include(request,response);
+			RequestDispatcher sd = null;
+			sd = request.getRequestDispatcher("update_admin.html");
+			sd.include(request,response);
 			out.println("<h2>fields or empty <h2>");
 			out.println("<h2>Enter username and passwaord<h2>");
+		}
+		else {
+			AdminDao d = new AdminDao();
+			d.updateadmin(username, password);
+			rd = request.getRequestDispatcher("index.html");
+			rd.include(request,response);
+			out.println("<h2>New username and password updated sucessfully<h2>");
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
