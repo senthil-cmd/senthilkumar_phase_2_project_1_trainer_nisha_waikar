@@ -25,7 +25,7 @@ public class Login extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		AdminDao admindao = new AdminDao();
-		admindao.addadmin(); //to add admin for first time
+		//admindao.addadmin(); //to add admin for first time
 		PrintWriter out = response.getWriter();
 		String username = request.getParameter("uname");
 		String password = request.getParameter("pass");
