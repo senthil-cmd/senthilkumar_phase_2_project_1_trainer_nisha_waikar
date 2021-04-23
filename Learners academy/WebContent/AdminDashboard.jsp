@@ -234,11 +234,25 @@ if(sublist!= null)  // Null check for the object
 		 Subjects subject = iterator.next();
 				Classes class2=subject.getClasses();
 				Teachers teach2= subject.getTeacher();
+				String getclsname;
+				if(class2==null){
+					 getclsname = "Not assigned ";
+				}else{
+					getclsname = class2.getClassname();
+					
+				}
+				String getteachname;
+				if(teach2==null){
+					getteachname = "Not assigned";
+				}else{
+					getteachname = teach2.getTeachername();
+					
+				}
 	%>
 	<tr><td><%=subject.getSubjectid()%></td>
 		<td><%=subject.getSubjectname()%></td>
-		<td><%=class2.getClassname()%></td>
-		<td><%=teach2.getTeachername()%></td>
+		<td><%=getclsname%></td>
+		<td><%=getteachname%></td>
 	</tr>
 	<%
 	}
