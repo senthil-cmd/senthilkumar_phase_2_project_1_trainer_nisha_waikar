@@ -182,10 +182,6 @@ select {
 					}
 				%>
 			</select>
-			<%
-				out.println(request.getParameter("classid2s"));
-			%>
-
 			select the subject <select name="subjectid2c">
 				<%
 					for (Subjects sub : sublist) {
@@ -195,9 +191,6 @@ select {
 				%>
 
 			</select>
-			<%
-				out.println(request.getParameter("subjectid2c"));
-			%>
 			<input type="hidden" name="switch" value="5"> <input
 				type="submit" name="subj2class" value="submit">
 		</form>
